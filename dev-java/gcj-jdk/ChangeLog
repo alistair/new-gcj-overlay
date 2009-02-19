@@ -1,0 +1,92 @@
+# ChangeLog for dev-java/gcj-jdk
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Jan 2009; Petteri Räty <betelgeuse@gentoo.org> gcj-jdk-4.3-r4.ebuild:
+  Migrate to EAPI 2
+
+* gcj-jdk-4.3.1-r4 (01 Dec 2008)
+
+  01 Dec 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3-r4.ebuild:
+	Bump to revision 4.  Remove geki's cruft which breaks jar->lib mapping. Add gcj-dbtool
+	and gij to /usr/bin.  Make gcj-jdk API warning more accurate.
+	
+  24 Nov 2008; Petteri Räty <betelgeuse@gentoo.org> gcj-jdk-4.3-r3.ebuild:
+  Don't try to set permissions on the javac symlink to ecj.
+
+  19 Nov 2008; Petteri Räty <betelgeuse@gentoo.org> gcj-jdk-4.3-r3.ebuild:
+  Change instructions to set gcj-jdk as system vm to a link to Gentoo Java
+  Guide and warn about missing 1.5 apis.
+
+* gcj-jdk-4.3.1-r3 (07 Nov 2008)
+
+  07 Nov 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3-r3.ebuild:
+  Add missing server directory and bump to revision 3.
+	
+  29 Oct 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3-r2.ebuild:
+  Depend on eclipse-ecj-3.3.0-r7 and bump to revision 2.
+	
+  29 Oct 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3-r1.ebuild:
+  Add include directory symlink and bump to revision 1.
+	
+  09 Oct 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.ebuild:
+  Clean up detritus from old slotting.
+
+  06 Oct 2008; Petteri Räty <betelgeuse@gentoo.org> gcj-jdk-4.3.ebuild:
+  No need to instruct to emerge gjdoc as we have a PDEPEND on it.
+
+  26 Sep 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.ebuild:
+  Fully support later versions of gcc.
+
+  23 Sep 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Allow later versions of gcc.
+	
+  14 Jul 2008; James Le Cuirot <chewi@aura-online.co.uk> gcj-jdk-4.3.1.ebuild:
+  Don't depend on a specific version of ecj anymore. Let eselect worry about the
+  /usr/bin/ecj symlink.
+
+  08 Jul 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Move creation of jre/bin up to come before the java symlink.
+
+  08 Jul 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Add explicit dir creation.
+	
+  08 Jul 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Remove references to gcj-config.
+	
+  08 Jul 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Correct bindir so javac is installed.
+	
+  07 Jul 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Correct ecj symlink to use /usr/bin/ecj or latest of ecj-3*
+	
+  22 Jun 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Fix use of gcj-config.
+
+  22 Jun 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.1.ebuild:
+  Fix paths to tools.jar and rt.jar, variable substitution and use of gcj-config.
+	
+*gcj-jdk-4.3.1 (16 Jun 2008)
+	
+  16 Jun 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.1.ebuild:
+  Convert to use gcc 4.3.1 and include USE flag warning.
+
+  26 May 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Fix quoting issue.
+
+  23 Apr 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Symlink against versioned ecj.
+
+  22 Apr 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Disable gcjwebplugin.
+
+  15 Apr 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Use jcf-dump to provide javap.
+
+  12 Apr 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Use ecj to provide javac.
+
+*gcj-jdk-4.3.0 (07 Apr 2008)
+
+  07 Apr 2008; Andrew John Hughes <gnu_andrew@member.fsf.org> gcj-jdk-4.3.0.ebuild:
+  Initial import.
