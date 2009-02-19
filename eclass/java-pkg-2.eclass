@@ -24,8 +24,9 @@ inherit java-utils-2
 # the eclass can automatically add the needed dependencies for the java-pkg_do*
 # functions.
 #
+# Build Java packages to native libraries
 # ------------------------------------------------------------------------------
-IUSE="${JAVA_PKG_IUSE}"
+IUSE="${JAVA_PKG_IUSE} gcj multislot"
 
 # ------------------------------------------------------------------------------
 # @depend
@@ -122,6 +123,10 @@ java-pkg-2_pkg_preinst() {
 			eerror "Install dev-java/java-dep-check for dependency checking"
 		fi
 	fi
+}
+# ------------------------------------------------------------------------------
+pre_pkg_postinst() {
+	java-pkg_reg-cachejar_
 }
 
 # ------------------------------------------------------------------------------

@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}"
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 # See java-pkg-2.eclass for JAVA_PKG_IUSE documentation
-IUSE="${JAVA_PKG_IUSE} ${JAVA_PKG_OPT_USE}"
+IUSE="${JAVA_PKG_IUSE} ${JAVA_PKG_OPT_USE} gcj multislot"
 
 EXPORT_FUNCTIONS pkg_setup
 [[ "${EAPI:-0}" == "2" ]] && EXPORT_FUNCTIONS src_prepare
@@ -52,4 +52,10 @@ java-pkg-opt-2_pkg_setup() {
 # ------------------------------------------------------------------------------
 java-pkg-opt-2_src_prepare() {
 	use ${JAVA_PKG_OPT_USE} && java-utils-2_src_prepare
+}
+
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+pre_pkg_postinst() {
+        java-pkg_reg-cachejar_
 }
