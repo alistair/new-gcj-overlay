@@ -152,7 +152,7 @@ src_install() {
 	doexe "${S}"/rebuild-classmap-db
 
 	if use nsplugin; then
-		install_mozilla_plugin "${GCJ_JAVA_HOME}"/libgcjwebplugin.so
+		install_mozilla_plugin "${GCJ_JAVA_HOME}"/jre/lib/${libarch}/libgcjwebplugin.so
 	fi
 }
 
