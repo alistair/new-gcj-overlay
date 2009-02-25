@@ -2619,7 +2619,7 @@ java-pkg_switch-vm() {
 		export JDK_HOME=${JAVA_HOME}
 
 		# Setup GCJ environment for packages that use gcj directly
-		java-pkg_native_init_
+		java-pkg_native_init_ 1
 
 		#TODO If you know a better solution let us know.
 		java-pkg_append_ LD_LIBRARY_PATH "$(java-config -g LDPATH)"
@@ -2877,10 +2877,12 @@ java-pkg_native-set-env() {
 #
 # Check for issues
 #
+# @param $1 - flag to skip filter gcjflags if set
 # @return 0 - procede with native build
 # @return 1 - skip native build
 # ------------------------------------------------------------------------------
 java-pkg_native_init_() {
+	local skip_cflags="${1}"
 	if ! has gcj "${IUSE}" || ! use gcj ; then
 		return 1
 	fi
@@ -2915,7 +2917,7 @@ java-pkg_native_init_() {
 	einfo "Using gcc-config profile: ${gcc_profile} to build native pkg..."
 
 	java-pkg_native-set-env ${gcc_profile}
-	java-pkg_gcjflags
+	[[ -n ${skip_cflags} ]] || java-pkg_gcjflags
 
 	return 0
 }
